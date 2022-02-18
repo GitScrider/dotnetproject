@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/debianvm/.dotnet/store/|arch|/|tfm|",
+      "/home/debianvm/.nuget/packages"
+    ]
+  }
+}

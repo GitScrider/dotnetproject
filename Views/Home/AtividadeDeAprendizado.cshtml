@@ -1,0 +1,481 @@
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Marque fotos</title>
+    
+  </head>
+  <body>
+    <header>
+        <h1>Oi Bill</h1>
+
+    </header>
+    <main>
+      <p>Veja as marcações que foram feitas na foto.</p>
+      <div class="linha">
+        <div class="foto-anotada">
+          <img src="/img/raspberrypi4.jpg" draggable="false">
+
+          <!-- Estas são as marcações na foto que fazem mostrar um balãozinho -->
+          <div class="marcacao selecionada"
+            data-titulo="Pichu"
+            data-conteudo="Este é o pokémon que solta choque do trovão!!"
+            data-cor="#9e7000"
+            data-formato="formato-retangular"
+            style="width: 20px; height: 20px; top: 10px; left: 10px;"></div>
+
+          <div class="marcacao"
+            data-titulo="Grookey"
+            data-conteudo="Um makakito verde, primo do Bulbassauro"
+            data-cor="#025c02"
+            data-formato="formato-retangular"
+            style="width: 20px; height: 20px; top: 10px; left: 40px;"></div>
+
+        </div>
+
+        <!-- Este é o "balãozinho" -->
+        <div id="balaozinho"></div>
+
+        <!-- Seção de controles das marcações e foto -->
+        <section class="controles">
+          <fieldset>
+            <legend>Das marcações</legend>
+
+            <div>
+              <button>adicionar marcação</button>
+
+            </div>
+
+
+            <div class="conjunto-controles rotulos-proximos">
+              <label>ocultar marcações: <input  type="checkbox" id="visibilidade-das-marcacoes" value="marcacoes-ocultas"></label>
+            </div>
+
+            <div class="conjunto-controles">
+              <label>x: <input type="number" value="300" id="x-da-marcacao"></label>
+              <label>y: <input type="number" value="50" id="y-da-marcacao"></label>
+              <label>largura: <input type="number" value="120" id="largura-da-marcacao"></label>
+              <label>altura: <input type="number" value="135" id="altura-da-marcacao"></label>
+            </div>
+
+            <div class="conjunto-controles">
+              <label for="titulo-da-marcacao">título:</label>
+              <input type="text" id="titulo-da-marcacao">
+              <label for="conteudo-da-marcacao">conteúdo:</label>
+              <textarea id="conteudo-da-marcacao" rows="2"></textarea>
+              <label>cor do texto: <input type="color" id="cor-da-marcacao"></label>
+            </div>
+
+            <div class="conjunto-controles">
+              <div class="rotulos-proximos">
+                formato da marcação:
+                <label>
+                  <input type="radio" name="formato-da-marcacao" value="formato-retangular" checked>retangular
+                </label>
+                <label>
+                  <input type="radio" name="formato-da-marcacao" value="formato-oval">oval
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+<style>
+    body {
+  font-family: Raleway, sans-serif;
+  background-image: repeating-linear-gradient(-45deg, #f9f9f9, #f9f9f9 25px, transparent 25px, transparent 45px);
+}
+
+header {
+  background-image: repeating-linear-gradient(-45deg, #f9f9f905 5px, #f9f9f905 30px, transparent 30px, transparent 50px),
+                    linear-gradient(to right, #ff5656, #f17dbc, #7878f2);
+  box-shadow: 0 2px 8px silver;
+  color: white;
+}
+
+h1 {
+  font-family: "Cedarville Cursive", cursive;
+}
+
+.controles {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff8;
+  --border-color: silver;
+  --control-color: #333;
+  --input-padding: 0.3em;
+  --text-size: 0.8em;
+  --round-corners: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  color: var(--control-color);
+  padding: var(--input-padding);
+  font-size: var(--text-size);
+  border-radius: var(--round-corners);
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-style: solid;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+input[type="number"] {
+  width: 5em;
+  margin-left: 1em;
+}
+
+input[type="file"] {
+  max-width: 235px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+ 
+.conjunto-controles {
+  margin-bottom: 1em;
+  border-width: 1px 1px 1px 4px;
+  border-style: solid;
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 2px #0001;
+  padding: 1em;
+}
+
+fieldset {
+  border-style: solid none none none;
+  border-color: silver;
+  border-width: 1px;
+  padding: 1em 0;
+}
+
+legend {
+  margin: 0 auto;
+  font-size: 0.75em;
+  background-image: linear-gradient(to left bottom, #ebeb00, #e9ff78);
+}
+
+label.rotulos-proximos,
+.rotulos-proximos label {
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+
+.foto-anotada {
+  position: relative;
+}
+
+
+.marcacao,
+#balaozinho {
+  position: absolute;
+}
+
+.foto-anotada img {
+  box-shadow: 0px 4px 4px rgba(0,0,0,.2);
+  border: 1px solid #666;
+  max-width: 100%;
+}
+
+
+.marcacao {
+  border: 1px solid black;
+  box-shadow: 0 0 0 1px white;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 200ms ease-out;
+  cursor: help;
+}
+
+.marcacao.selecionada {
+  border-color: yellow;
+  box-shadow: 0 0 0 1px darkgoldenrod;
+}
+
+.marcacao.formato-oval {
+  border-radius: 50%;
+}
+
+.marcacao.formato-retangular {
+  border-radius: 0;
+}
+
+.marcacoes-ocultas .marcacao {
+  /* --- Exercício 0 --- */
+}
+
+
+#balaozinho {
+  border: 1px solid silver;
+  background-color: rgba(255, 255, 255, .9);
+  font-size: 10px;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+
+#balaozinho:empty {
+  display: none;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  padding: 0.25em 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+header img {
+  height: 2em;
+  align-self: center;
+}
+
+h1 {
+  margin: 0 0.35em;
+}
+
+main {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha {
+  display: flex;
+  gap: 1em;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin-bottom: 4px;
+  min-width: 280px;
+  border: 1px solid var(--border-color);
+}
+</style>
+
+<script>
+
+@* balaozinho *@
+let marcacao = document.querySelectorAll('.marcacao');
+
+for (let i = 0; i < marcacao.length; i++) {
+
+    marcacao[i].addEventListener('mouseenter', mousein);
+
+    marcacao[i].addEventListener('mouseleave', mouseout);
+
+    marcacao[i].addEventListener('mousemove',balaozinhoposition)
+
+}
+
+let balaozinho = document.querySelector('#balaozinho');
+
+function mousein(event) {
+
+    let titulo = document.createElement("h2");
+    titulo.innerHTML = event.target.dataset.titulo;
+    titulo.style.color = event.target.dataset.cor;
+    balaozinho.appendChild(titulo);
+
+    let conteudo = document.createElement("p");
+    conteudo.innerHTML = event.target.dataset.conteudo;
+    conteudo.style.color = event.target.dataset.cor;
+    balaozinho.appendChild(conteudo);
+}
+
+function mouseout(event) {
+
+    balaozinho.innerHTML = '';
+
+}
+
+function balaozinhoposition(event) {
+
+
+    balaozinho.style.left = event.pageX + "px";
+    balaozinho.style.top = event.pageY + "px";
+
+}
+
+@* controles foto anotada *@
+
+let botaohidden = document.querySelector('#visibilidade-das-marcacoes');
+
+botaohidden.addEventListener('change', ocultarmarcacao);
+
+let ishidden = false;
+
+let selecionar = document.querySelector('#filtro-da-foto');
+
+selecionar.addEventListener('change', selected);
+
+let filtro = document.querySelector('.foto-anotada > img');
+
+function ocultarmarcacao() {
+
+    let ocultarmarc = document.getElementsByClassName("marcacao");
+    ishidden = !ishidden;
+
+    for (let i = 0; i < ocultarmarc.length; i++) {
+        ocultarmarc[i].style.visibility = ishidden? "hidden": "visible" ;
+    }
+
+}
+
+function selected(event) {
+
+    console.log(selecionar.value);
+    console.log(filtro.style.filter);
+    filtro.style.filter = selecionar.value;
+
+}
+
+@* controles marcacao *@
+
+let marcacaoselect = document.querySelectorAll('.marcacao');
+
+let marcacaoselecionada = marcacaoselect[0].classList.contains('selecionada') ? marcacaoselect[0] : marcacaoselect[1];
+
+let x = document.getElementById("x-da-marcacao");
+let y = document.getElementById("y-da-marcacao");
+let largura = document.getElementById("largura-da-marcacao");
+let altura = document.getElementById("altura-da-marcacao");
+let titulo = document.getElementById("titulo-da-marcacao");
+let conteudo = document.getElementById("conteudo-da-marcacao");
+let cordotexto = document.getElementById("cor-da-marcacao");
+
+
+let formatocheked = document.getElementsByName("formato-da-marcacao");
+
+
+
+console.log(formatocheked);
+
+x.addEventListener('change', changex);
+y.addEventListener('change', changey);
+largura.addEventListener('change', changelargura);
+altura.addEventListener('change', changealtura);
+titulo.addEventListener('change', changetitulo);
+conteudo.addEventListener('change', changeconteudo);
+cordotexto.addEventListener('change', changecordotexto);
+
+for (let x = 0; x < formatocheked.length; x++) {
+    formatocheked[x].addEventListener('change', changeformatocheked);
+
+}
+
+
+let formato;
+
+for (let i = 0; i < marcacaoselect.length; i++) {
+
+    marcacaoselect[i].addEventListener('click', selected);
+
+}
+
+
+function selected(event) {
+
+    marcacaoselecionada = event.target;
+
+    for (let i = 0; i<marcacaoselect.length; i++) {
+
+        marcacaoselect[i].classList.remove("selecionada")
+    }
+    marcacaoselecionada.classList.add("selecionada");
+
+
+    x.value = parseInt(event.target.style.left);
+    y.value = parseInt(event.target.style.top);
+    largura.value = parseInt(event.target.style.width);
+    altura.value = parseInt(event.target.style.height);
+    titulo.value = event.target.dataset.titulo;
+    conteudo.value = event.target.dataset.conteudo;
+    cordotexto.value = event.target.dataset.cor;
+
+    formatocheked[1].checked = marcacaoselecionada.classList.contains('formato-oval') ? true : false;
+    formatocheked[0].checked = marcacaoselecionada.classList.contains('formato-oval') ? false : true;
+
+}
+
+
+function changex(event) {
+
+
+    marcacaoselecionada.style.left = event.target.value + "px";
+
+}
+
+function changey(event) {
+
+    marcacaoselecionada.style.top = event.target.value + "px";
+
+}
+
+function changelargura(event) {
+    marcacaoselecionada.style.width = event.target.value + "px";
+}
+
+function changealtura(event) {
+    marcacaoselecionada.style.height = event.target.value + "px";
+}
+
+function changetitulo(event) {
+
+
+    marcacaoselecionada.setAttribute('data-titulo', titulo.value);
+
+
+
+}
+
+function changeconteudo(event) {
+
+    marcacaoselecionada.setAttribute('data-conteudo', conteudo.value);
+
+}
+
+function changecordotexto(event) {
+    marcacaoselecionada.setAttribute('data-cor', cordotexto.value)
+}
+
+function changeformatocheked(event) {
+
+    console.log(event.target.defaultValue);
+
+
+    marcacaoselecionada.setAttribute('data-formato', event.target.defaultValue);
+    marcacaoselecionada.classList.remove('formato-retangular');
+    marcacaoselecionada.classList.remove('formato-oval');
+    marcacaoselecionada.classList.add(event.target.defaultValue);
+
+}
+</script>
