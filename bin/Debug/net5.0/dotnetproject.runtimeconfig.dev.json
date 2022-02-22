@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/debianvm/.dotnet/store/|arch|/|tfm|",
-      "/home/debianvm/.nuget/packages"
+      "C:\\Users\\Igor Lacerda Tomich\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Igor Lacerda Tomich\\.nuget\\packages",
+      "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
     ]
   }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "smC1Rsz8/5YmhiAGPpf10HsgAeDjvBnJnhI/x+J383kTDCwTwuUkNZ3esGcXJP1sfMy18SOUTCleKNE2msjKAQ==",
+  "dgSpecHash": "1XkKYMKU8z0EnsBRN7qrUckSZ3O8cr/Ah0YG+CkRmehJAVeLlE1WFBrYK9b+SzGdKSNN//VMWaU4p/2kV3cLRA==",
   "success": true,
-  "projectFilePath": "/home/debianvm/Área de trabalho/dev/dotnetproject/dotnetproject.csproj",
+  "projectFilePath": "D:\\dev\\dotnetproject.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

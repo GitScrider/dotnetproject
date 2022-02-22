@@ -14,25 +14,19 @@
 
     </header>
     <main>
-      <p>Veja as marcações que foram feitas na foto.</p>
+@*      <p>Veja as marcações que foram feitas na foto.</p>*@
       <div class="linha">
         <div class="foto-anotada">
           <img src="/img/raspberrypi4.jpg" draggable="false">
 
           <!-- Estas são as marcações na foto que fazem mostrar um balãozinho -->
           <div class="marcacao selecionada"
-            data-titulo="Pichu"
-            data-conteudo="Este é o pokémon que solta choque do trovão!!"
-            data-cor="#9e7000"
+            data-titulo=""
+            data-conteudo=""
+            data-cor="red"
             data-formato="formato-retangular"
             style="width: 20px; height: 20px; top: 10px; left: 10px;"></div>
 
-          <div class="marcacao"
-            data-titulo="Grookey"
-            data-conteudo="Um makakito verde, primo do Bulbassauro"
-            data-cor="#025c02"
-            data-formato="formato-retangular"
-            style="width: 20px; height: 20px; top: 10px; left: 40px;"></div>
 
         </div>
 
@@ -42,16 +36,8 @@
         <!-- Seção de controles das marcações e foto -->
         <section class="controles">
           <fieldset>
-            <legend>Das marcações</legend>
-
-            <div>
-              <button>adicionar marcação</button>
-
-            </div>
-
-
-            <div class="conjunto-controles rotulos-proximos">
-              <label>ocultar marcações: <input  type="checkbox" id="visibilidade-das-marcacoes" value="marcacoes-ocultas"></label>
+            <div class="conjunto-controles">
+                <button onclick="sendxy()">Enviar Posição X Y</button>
             </div>
 
             <div class="conjunto-controles">
@@ -81,7 +67,6 @@
               </div>
             </div>
           </fieldset>
-          
         </section>
       </div>
     </main>
@@ -209,7 +194,7 @@ label.rotulos-proximos,
 }
 
 .marcacao.selecionada {
-  border-color: yellow;
+  border-color: red;
   box-shadow: 0 0 0 1px darkgoldenrod;
 }
 
@@ -325,38 +310,7 @@ function balaozinhoposition(event) {
 
 }
 
-@* controles foto anotada *@
 
-let botaohidden = document.querySelector('#visibilidade-das-marcacoes');
-
-botaohidden.addEventListener('change', ocultarmarcacao);
-
-let ishidden = false;
-
-let selecionar = document.querySelector('#filtro-da-foto');
-
-selecionar.addEventListener('change', selected);
-
-let filtro = document.querySelector('.foto-anotada > img');
-
-function ocultarmarcacao() {
-
-    let ocultarmarc = document.getElementsByClassName("marcacao");
-    ishidden = !ishidden;
-
-    for (let i = 0; i < ocultarmarc.length; i++) {
-        ocultarmarc[i].style.visibility = ishidden? "hidden": "visible" ;
-    }
-
-}
-
-function selected(event) {
-
-    console.log(selecionar.value);
-    console.log(filtro.style.filter);
-    filtro.style.filter = selecionar.value;
-
-}
 
 @* controles marcacao *@
 
@@ -401,6 +355,51 @@ for (let i = 0; i < marcacaoselect.length; i++) {
 
 }
 
+
+function sendxy(event){
+  
+        xs = document.getElementById("x-da-marcacao").value;
+        ys = document.getElementById("y-da-marcacao").value;
+
+        console.log(xs);
+        console.log(ys);
+        console.log("test");
+
+
+
+        var jsonObject = {
+            X: xs,
+            Y: ys
+        };
+
+        $.ajax({
+        url: "https://localhost:44360/api/Position/SendPosition",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(jsonObject),
+        success: function (result) { 
+            debugger;
+            console.log(result);
+        
+        
+        },
+        error: function (xhr, textStatus, c) {
+            if (xhr.status == 401) { 
+                alert("Session Expired!"); window.location = "/Account"; 
+            }
+            else {
+                debugger;
+                alert('Content load failed!', "info");
+        
+            }
+        }
+        });
+
+
+   
+
+}
 
 function selected(event) {
 

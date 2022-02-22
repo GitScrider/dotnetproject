@@ -39,3 +39,44 @@
 /home/debianvm/Área de trabalho/dev/dotnetproject/obj/Debug/net5.0/dotnetproject.genruntimeconfig.cache
 /home/debianvm/Área de trabalho/dev/dotnetproject/obj/Debug/net5.0/dotnetproject.csproj.CopyComplete
 /home/debianvm/Área de trabalho/dev/dotnetproject/obj/Debug/net5.0/Razor/Views/Home/AtividadeDeAprendizado.cshtml.g.cs
+D:\dev\bin\Debug\net5.0\appsettings.Development.json
+D:\dev\bin\Debug\net5.0\appsettings.json
+D:\dev\bin\Debug\net5.0\dotnetproject.StaticWebAssets.xml
+D:\dev\bin\Debug\net5.0\dotnetproject.exe
+D:\dev\bin\Debug\net5.0\dotnetproject.deps.json
+D:\dev\bin\Debug\net5.0\dotnetproject.runtimeconfig.json
+D:\dev\bin\Debug\net5.0\dotnetproject.runtimeconfig.dev.json
+D:\dev\bin\Debug\net5.0\dotnetproject.dll
+D:\dev\bin\Debug\net5.0\ref\dotnetproject.dll
+D:\dev\bin\Debug\net5.0\dotnetproject.pdb
+D:\dev\bin\Debug\net5.0\dotnetproject.Views.dll
+D:\dev\bin\Debug\net5.0\dotnetproject.Views.pdb
+D:\dev\obj\Debug\net5.0\dotnetproject.csproj.AssemblyReference.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\obj\Debug\net5.0\dotnetproject.AssemblyInfoInputs.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.AssemblyInfo.cs
+D:\dev\obj\Debug\net5.0\dotnetproject.csproj.CoreCompileInputs.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.MvcApplicationPartsAssemblyInfo.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.RazorAssemblyInfo.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.RazorAssemblyInfo.cs
+D:\dev\obj\Debug\net5.0\scopedcss\bundle\dotnetproject.styles.css
+D:\dev\obj\Debug\net5.0\staticwebassets\dotnetproject.StaticWebAssets.Manifest.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.TagHelpers.input.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.TagHelpers.output.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.RazorCoreGenerate.cache
+D:\dev\obj\Debug\net5.0\Razor\Views\Home\AtividadeDeAprendizado.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\dev\obj\Debug\net5.0\dotnetproject.RazorTargetAssemblyInfo.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.RazorTargetAssemblyInfo.cs
+D:\dev\obj\Debug\net5.0\dotnetproject.Views.pdb
+D:\dev\obj\Debug\net5.0\dotnetproject.dll
+D:\dev\obj\Debug\net5.0\ref\dotnetproject.dll
+D:\dev\obj\Debug\net5.0\dotnetproject.pdb
+D:\dev\obj\Debug\net5.0\dotnetproject.genruntimeconfig.cache
+D:\dev\obj\Debug\net5.0\dotnetproject.csproj.CopyComplete

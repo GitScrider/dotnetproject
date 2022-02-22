@@ -33,14 +33,6 @@ namespace dotnetproject.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult SendPosition([FromBody] PositionXY positionXY){
-
-
-            Console.WriteLine(positionXY.X+" - "+positionXY.Y);
-            return Ok();
-
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
